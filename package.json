@@ -1,0 +1,28 @@
+{
+  "name": "avalanche-sdk-test-client",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create-subnet": "node createSubnet.js",
+    "create-subnet:secure": "node createSubnetSecure.js",
+    "create-subnet:ts": "node --loader ts-node/esm createSubnet.ts",
+    "create-subnet:mjs": "node --experimental-specifier-resolution=node createSubnet.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@avalabs/avalanchejs": "^5.0.0",
+    "@avalanche-sdk/client": "^0.0.4-alpha.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.3",
+    "typescript": "^5.3.3"
+  }
+}
