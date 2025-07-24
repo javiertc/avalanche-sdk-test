@@ -1,6 +1,6 @@
-# Avalanche Subnet Creation Tool
+# Avalanche SDK Test
 
-This project demonstrates how to create an Avalanche subnet using the Avalanche SDK.
+This project demonstrates various Avalanche blockchain operations using the Avalanche SDK, including subnet creation, chain management, and cross-chain transfers.
 
 ## Setup
 
@@ -18,18 +18,31 @@ This project demonstrates how to create an Avalanche subnet using the Avalanche 
 
 3. Ensure your account has sufficient AVAX on the Fuji testnet. You can get test AVAX from the [Avalanche Fuji Faucet](https://faucet.avax.network/).
 
-## Usage
+## Available Scripts
 
-Run the subnet creation script:
+### Create Subnet and Chain
 ```bash
-npm run create-subnet
+npx tsx createSubnetAndChain.ts
 ```
+Creates a new subnet and deploys a blockchain on it.
 
-The script will:
-1. Connect to the Avalanche Fuji testnet
-2. Prepare a subnet creation transaction
-3. Sign and broadcast the transaction
-4. Display the transaction ID
+### P-Chain to C-Chain Transfer
+```bash
+npx tsx p2c.ts
+```
+Transfers AVAX from the P-Chain to the C-Chain.
+
+### C-Chain to P-Chain Transfer
+```bash
+npx tsx c2p.ts
+```
+Transfers AVAX from the C-Chain to the P-Chain.
+
+### Convert Subnet to L1
+```bash
+npx tsx convertSubnetToL1Tx.ts
+```
+Converts an existing subnet to an L1 blockchain.
 
 ## Environment Variables
 
@@ -39,9 +52,6 @@ The script will:
 
 ⚠️ **Never share or commit your private key!** Always use environment variables for sensitive data.
 
-## Next Steps
+## Network Information
 
-After creating a subnet:
-1. Note down your Subnet ID from the transaction
-2. Add validators to your subnet
-3. Create a blockchain on your subnet 
+All scripts are configured to work with the Avalanche Fuji testnet by default. 
